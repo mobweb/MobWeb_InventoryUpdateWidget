@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets>
+    <MobWeb_InventoryUpdateWidget_Restocked type="InventoryUpdateWidget/product_widget_restocked" module="InventoryUpdateWidget">
+        <name>Recently Restocked Products</name>
+        <description type="desc">List of products that were restocked during the last 24 hours</description>
+        <is_email_compatible>1</is_email_compatible>
+        <parameters>
+            <products_count translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <value>5</value>
+                <label>Number of Products to Display</label>
+                <type>text</type>
+            </products_count>
+            <template>
+                <required>1</required>
+                <visible>1</visible>
+                <label>Template</label>
+                <type>select</type>
+                <value>mobweb/inventoryupdatewidget/widget/new/content/products_grid.phtml</value>
+                <values>
+                    <default translate="label">
+                        <value>mobweb/inventoryupdatewidget/products_grid.phtml</value>
+                        <label>Grid Template</label>
+                    </default>
+                    <list translate="label">
+                        <value>mobweb/inventoryupdatewidget/products_list.phtml</value>
+                        <label>List Template</label>
+                    </list>
+                </values>
+            </template>
+        </parameters>
+    </MobWeb_InventoryUpdateWidget_Restocked>
+    <MobWeb_InventoryUpdateWidget_Created type="InventoryUpdateWidget/product_widget_created" module="InventoryUpdateWidget">
+        <name>Recently Created Products</name>
+        <description type="desc">List of products that were created during the last 24 hours</description>
+        <is_email_compatible>1</is_email_compatible>
+        <parameters>
+            <products_count translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <value>5</value>
+                <label>Number of Products to Display</label>
+                <type>text</type>
+            </products_count>
+            <template>
+                <required>1</required>
+                <visible>1</visible>
+                <label>Template</label>
+                <type>select</type>
+                <value>mobweb/inventoryupdatewidget/widget/new/content/products_grid.phtml</value>
+                <values>
+                    <default translate="label">
+                        <value>mobweb/inventoryupdatewidget/products_grid.phtml</value>
+                        <label>Grid Template</label>
+                    </default>
+                    <list translate="label">
+                        <value>mobweb/inventoryupdatewidget/products_list.phtml</value>
+                        <label>List Template</label>
+                    </list>
+                </values>
+            </template>
+        </parameters>
+    </MobWeb_InventoryUpdateWidget_Created>
+</widgets>

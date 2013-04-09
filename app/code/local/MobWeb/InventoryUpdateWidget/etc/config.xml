@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <MobWeb_InventoryUpdateWidget>
+            <version>0.1.0</version>
+        </MobWeb_InventoryUpdateWidget>
+    </modules>
+    <global>
+        <blocks>
+            <!-- A custom block that will be used in the widget -->
+            <InventoryUpdateWidget>
+                <class>MobWeb_InventoryUpdateWidget_Block</class>
+            </InventoryUpdateWidget>
+        </blocks>
+        <models>
+            <!-- This "handle" is referenced later on, see the next comment -->
+            <InventoryUpdateWidget>
+                <class>MobWeb_InventoryUpdateWidget_Model</class>
+            </InventoryUpdateWidget>
+        </models>
+        <resources>
+            <!-- This setup script adds the "restocked_at" attribute to the
+            product object -->
+            <inventoryupdatewidget_setup>
+                <setup>
+                    <module>MobWeb_InventoryUpdateWidget</module>
+                    <class>Mage_Catalog_Model_Resource_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </inventoryupdatewidget_setup>
+        </resources>
+        <helpers>
+            <InventoryUpdateWidget>
+                <class>MobWeb_InventoryUpdateWidget_Helper</class>
+            </InventoryUpdateWidget>
+        </helpers>
+    </global>
+    <adminhtml>
+        <events>
+            <catalog_product_save_before>
+                <observers>
+                    <InventoryUpdateWidget>
+                        <type>singleton</type>
+                        <!-- This is where we reference the model that was defined earlier -->
+                        <class>InventoryUpdateWidget/observer</class>
+                        <!-- This can be named anything, but it has to match a method in the class defined in the previous line -->
+                        <method>catalogProductSaveBefore</method>
+                    </InventoryUpdateWidget>
+                </observers>
+            </catalog_product_save_before>
+            <!--
+            <catalog_product_save_after>
+                <observers>
+                    <InventoryUpdateWidget>
+                        <type>singleton</type>
+                        <class>InventoryUpdateWidget/observer</class>
+                        <method>catalogProductSaveAfter</method>
+                    </InventoryUpdateWidget>
+                </observers>
+            </catalog_product_save_after>
+            -->
+        </events>
+    </adminhtml>
+</config>

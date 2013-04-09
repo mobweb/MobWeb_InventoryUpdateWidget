@@ -1,0 +1,8 @@
+app/code/local/MobWeb/InventoryUpdateWidget app/code/local/MobWeb/InventoryUpdateWidget/
+
+app/design/frontend/base/default/template/mobweb/inventoryupdatewidget app/design/frontend/base/default/template/mobweb/inventoryupdatewidget
+
+app/etc/modules/MobWeb_InventoryUpdateWidget.xml app/etc/modules/MobWeb_InventoryUpdateWidget.xml
+
+# Clear the cache
+@shell   rm -rf $PROJECT/var/cache/* && echo "Magento Cache cleared"
